@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-"# Lazarus_PesquisaDinamica" 
-"# Lazarus_PesquisaDinamica" 
-=======
 # Lazarus - Pesquisa Dinâmica
 ### PROGRAMA: Pesquisa dinâmica utilizando um edit para pesquisar em 3 campos diferentes
 ## (Pesquisamos nos campos: Código interno, Código de Barras e Descrição do Produto).
