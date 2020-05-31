@@ -1,0 +1,757 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 257
+  Height = 517
+  Top = 123
+  Width = 948
+  Caption = 'EXEMPLO PESQUISA DINAMICA PDV'
+  ClientHeight = 517
+  ClientWidth = 948
+  Color = 3487029
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.0.8.0'
+  object pnpDescricao: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 948
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Digite o código interno, barras ou nome para pesquisa'
+    Color = clBlack
+    Font.Color = clWhite
+    Font.Height = -27
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object cCODIGO: TEdit
+    Left = 56
+    Height = 45
+    Top = 112
+    Width = 304
+    Color = 5000268
+    Font.Color = clWhite
+    Font.Height = -27
+    OnKeyDown = cCODIGOKeyDown
+    OnKeyUp = cCODIGOKeyUp
+    ParentFont = False
+    TabOrder = 1
+    Text = '0123456'
+  end
+  object Label1: TLabel
+    Left = 56
+    Height = 25
+    Top = 80
+    Width = 155
+    Caption = 'Informe o Produto'
+    Font.Color = clSilver
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 56
+    Height = 25
+    Top = 176
+    Width = 99
+    Caption = 'Quantidade'
+    Font.Color = clSilver
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object nQTDE: TCurrencyEdit
+    Left = 56
+    Height = 44
+    Top = 208
+    Width = 149
+    Alignment = taRightJustify
+    AutoSize = False
+    DecimalPlaces = 3
+    DisplayFormat = '###,##0.###'
+    Font.Color = clWhite
+    Font.Height = -24
+    MaxValue = 0
+    MinValue = 0
+    ParentColor = True
+    ParentFont = False
+    TabOrder = 2
+    Value = 2.3221
+  end
+  object nUNIT: TCurrencyEdit
+    Left = 56
+    Height = 44
+    Top = 296
+    Width = 149
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '###,##0.00'
+    Font.Color = clWhite
+    Font.Height = -24
+    MaxValue = 0
+    MinValue = 0
+    ParentColor = True
+    ParentFont = False
+    TabOrder = 3
+    Value = 2.3221
+  end
+  object Label3: TLabel
+    Left = 56
+    Height = 25
+    Top = 264
+    Width = 68
+    Caption = 'Unitário'
+    Font.Color = clSilver
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object nSubTot: TCurrencyEdit
+    Left = 211
+    Height = 44
+    Top = 296
+    Width = 149
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '###,##0.00'
+    Font.Color = clWhite
+    Font.Height = -24
+    MaxValue = 0
+    MinValue = 0
+    ParentColor = True
+    ParentFont = False
+    TabOrder = 4
+    Value = 2.3221
+  end
+  object Label4: TLabel
+    Left = 211
+    Height = 25
+    Top = 264
+    Width = 109
+    Caption = 'Total do Item'
+    Font.Color = clSilver
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object nTotalPed: TCurrencyEdit
+    Left = 211
+    Height = 44
+    Top = 376
+    Width = 149
+    Alignment = taRightJustify
+    AutoSize = False
+    DisplayFormat = '###,##0.00'
+    Font.Color = clYellow
+    Font.Height = -24
+    MaxValue = 0
+    MinValue = 0
+    ParentColor = True
+    ParentFont = False
+    TabOrder = 5
+    Value = 2.3221
+  end
+  object Label5: TLabel
+    Left = 211
+    Height = 25
+    Top = 344
+    Width = 130
+    Caption = 'Total do Pedido'
+    Font.Color = clSilver
+    Font.Height = -19
+    ParentColor = False
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = 385
+    Height = 381
+    Top = 91
+    Width = 538
+    BevelColor = clWhite
+    Caption = 'Panel1'
+    ClientHeight = 381
+    ClientWidth = 538
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 6
+    object RxDBGrid1: TRxDBGrid
+      Left = 32
+      Height = 352
+      Top = 16
+      Width = 480
+      ColumnDefValues.BlobText = '(blob)'
+      TitleButtons = False
+      AutoSort = True
+      Columns = <      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'CODIGO'
+          Width = 50
+          FieldName = 'CODIGO'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'DESCRICAO'
+          Width = 230
+          FieldName = 'DESCRICAO'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'QTDE'
+          Width = 50
+          FieldName = 'QTDE'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'UNITARIO'
+          Width = 60
+          FieldName = 'UNITARIO'
+          DisplayFormat = '###,##0.00'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Font.Color = clBlack
+          Font.Height = -9
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'TOTAL'
+          Width = 70
+          FieldName = 'TOTAL'
+          DisplayFormat = '###,##0.00'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footer.DisplayFormat = '##,###,##0.00'
+          Footer.FieldName = 'TOTAL'
+          Footer.ValueType = fvtSum
+          Footers = <>
+        end>
+      KeyStrokes = <      
+        item
+          Command = rxgcShowFindDlg
+          ShortCut = 16454
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowColumnsDlg
+          ShortCut = 16471
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowFilterDlg
+          ShortCut = 16468
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowSortDlg
+          ShortCut = 16467
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowQuickFilter
+          ShortCut = 16465
+          Enabled = True
+        end      
+        item
+          Command = rxgcHideQuickFilter
+          ShortCut = 16456
+          Enabled = True
+        end      
+        item
+          Command = rxgcSelectAll
+          ShortCut = 16449
+          Enabled = True
+        end      
+        item
+          Command = rxgcDeSelectAll
+          ShortCut = 16429
+          Enabled = True
+        end      
+        item
+          Command = rxgcInvertSelection
+          ShortCut = 16426
+          Enabled = True
+        end      
+        item
+          Command = rxgcOptimizeColumnsWidth
+          ShortCut = 16427
+          Enabled = True
+        end      
+        item
+          Command = rxgcCopyCellValue
+          ShortCut = 16451
+          Enabled = True
+        end>
+      FooterOptions.Active = True
+      FooterOptions.Color = clSilver
+      FooterOptions.RowCount = 1
+      FooterOptions.Style = tsStandard
+      FooterOptions.DrawFullLine = False
+      SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+      SearchOptions.FromStart = False
+      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgFooterRows, rdgAllowQuickFilter]
+      FooterColor = clSilver
+      FooterRowCount = 1
+      AutoEdit = False
+      BorderStyle = bsNone
+      Color = clWhite
+      BorderColor = clBlack
+      DrawFullLine = False
+      FocusColor = 5501425
+      FixedHotColor = clGradientInactiveCaption
+      SelectedColor = 7923944
+      GridLineStyle = psClear
+      DataSource = dsItem
+      FixedColor = clBlack
+      FixedCols = 0
+      Flat = True
+      Font.Color = clBlack
+      Font.Height = -9
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      HeaderHotZones = []
+      HeaderPushZones = []
+      Options = [dgEditing, dgTitles, dgColumnResize, dgColumnMove, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ParentFont = False
+      Scrollbars = ssNone
+      TabOrder = 0
+      TitleFont.Color = clWhite
+      TitleFont.Height = -9
+      TitleFont.Name = 'Sans'
+      TitleFont.Style = [fsBold]
+    end
+  end
+  object Label6: TLabel
+    Left = 720
+    Height = 15
+    Top = 480
+    Width = 203
+    Caption = '(c) InfoCOTIDIANO - Visite no Youtube'
+    Font.Color = clWhite
+    ParentColor = False
+    ParentFont = False
+  end
+  object pnpPESQUISA: TPanel
+    Left = 56
+    Height = 231
+    Top = 161
+    Width = 770
+    ClientHeight = 231
+    ClientWidth = 770
+    Color = clGray
+    ParentColor = False
+    TabOrder = 7
+    Visible = False
+    object gridPESQUISA: TRxDBGrid
+      Left = 1
+      Height = 229
+      Top = 1
+      Width = 768
+      ColumnDefValues.BlobText = '(blob)'
+      TitleButtons = False
+      AutoSort = True
+      Columns = <      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'CODIGO'
+          Width = 81
+          FieldName = 'CODIGO'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'BARRAS'
+          Width = 150
+          FieldName = 'BARRAS'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'DESCRICAO'
+          Width = 400
+          FieldName = 'DESCRICAO'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'VENDA'
+          Width = 71
+          FieldName = 'VENDA'
+          DisplayFormat = '###,##0.00'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end>
+      KeyStrokes = <      
+        item
+          Command = rxgcShowFindDlg
+          ShortCut = 16454
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowColumnsDlg
+          ShortCut = 16471
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowFilterDlg
+          ShortCut = 16468
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowSortDlg
+          ShortCut = 16467
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowQuickFilter
+          ShortCut = 16465
+          Enabled = True
+        end      
+        item
+          Command = rxgcHideQuickFilter
+          ShortCut = 16456
+          Enabled = True
+        end      
+        item
+          Command = rxgcSelectAll
+          ShortCut = 16449
+          Enabled = True
+        end      
+        item
+          Command = rxgcDeSelectAll
+          ShortCut = 16429
+          Enabled = True
+        end      
+        item
+          Command = rxgcInvertSelection
+          ShortCut = 16426
+          Enabled = True
+        end      
+        item
+          Command = rxgcOptimizeColumnsWidth
+          ShortCut = 16427
+          Enabled = True
+        end      
+        item
+          Command = rxgcCopyCellValue
+          ShortCut = 16451
+          Enabled = True
+        end>
+      FooterOptions.DrawFullLine = False
+      SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+      SearchOptions.FromStart = False
+      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+      Align = alClient
+      Color = clSilver
+      DrawFullLine = False
+      FocusColor = clRed
+      SelectedColor = clHighlight
+      GridLineStyle = psSolid
+      DataSource = dsProduto
+      FixedCols = 0
+      Font.Height = -16
+      Font.Name = 'Sans'
+      Options = [dgColumnResize, dgColumnMove, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ParentFont = False
+      Scrollbars = ssNone
+      TabOrder = 0
+      OnKeyDown = gridPESQUISAKeyDown
+    end
+  end
+  object Memo1: TMemo
+    Left = 32
+    Height = 50
+    Top = 432
+    Width = 328
+    TabOrder = 8
+  end
+  object mdItem: TRxMemoryData
+    Active = True
+    FieldDefs = <    
+      item
+        Name = 'ITEM'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'CODIGO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'QTDE'
+        DataType = ftFloat
+        Precision = 3
+      end    
+      item
+        Name = 'UNITARIO'
+        DataType = ftCurrency
+        Precision = 15
+      end    
+      item
+        Name = 'TOTAL'
+        DataType = ftCurrency
+        Precision = 15
+      end>
+    PacketRecords = 0
+    left = 86
+    top = 394
+    object mdItemITEM: TAutoIncField
+      FieldKind = fkData
+      FieldName = 'ITEM'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object mdItemCODIGO: TLongintField
+      FieldKind = fkData
+      FieldName = 'CODIGO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object mdItemDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object mdItemQTDE: TFloatField
+      FieldKind = fkData
+      FieldName = 'QTDE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '###,##0.0##'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 3
+    end
+    object mdItemUNITARIO: TCurrencyField
+      FieldKind = fkData
+      FieldName = 'UNITARIO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '###,##0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+    object mdItemTOTAL: TCurrencyField
+      FieldKind = fkData
+      FieldName = 'TOTAL'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '###,##0.00'
+      MaxValue = 0
+      MinValue = 0
+    end
+  end
+  object dsItem: TDataSource
+    DataSet = mdItem
+    left = 146
+    top = 385
+  end
+  object RxDBGridFooterTools1: TRxDBGridFooterTools
+    Caption = 'Totals row'
+    FooterColor = clBlack
+    left = 328
+    top = 456
+  end
+  object conexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Catalog = 'pdv'
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+    )
+    AutoCommit = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'pdv'
+    User = 'root'
+    Password = 'Info@3004'
+    Protocol = 'mysql'
+    LibraryLocation = 'C:\Projetos\Ex_Pesq_dinamica\libmysql.dll'
+    left = 224
+    top = 432
+  end
+  object qrProduto: TZQuery
+    Connection = conexao
+    SQL.Strings = (
+      'select * from vw_venda'
+    )
+    Params = <>
+    left = 112
+    top = 448
+    object qrProdutoCODIGO: TLongintField
+      FieldKind = fkData
+      FieldName = 'CODIGO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrProdutoDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 180
+    end
+    object qrProdutoBARRAS: TStringField
+      FieldKind = fkData
+      FieldName = 'BARRAS'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 52
+    end
+    object qrProdutoVENDA: TFloatField
+      FieldKind = fkData
+      FieldName = 'VENDA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '###,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 9
+    end
+    object qrProdutoPESAVEL: TStringField
+      FieldKind = fkData
+      FieldName = 'PESAVEL'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+  end
+  object dsProduto: TDataSource
+    DataSet = qrProduto
+    left = 174
+    top = 450
+  end
+  object ActionList1: TActionList
+    left = 336
+    top = 64
+    object actLePeso: TAction
+      Caption = 'Le Peso'
+      OnExecute = actLePesoExecute
+    end
+  end
+  object ACBrBAL1: TACBrBAL
+    Modelo = balFilizola
+    Porta = 'COM3'
+    Intervalo = 2000
+    MonitorarBalanca = True
+    ArqLOG = 'teste.txt'
+    OnLePeso = ACBrBAL1LePeso
+    left = 12
+    top = 159
+  end
+end

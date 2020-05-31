@@ -1,0 +1,72 @@
+
+--------------------------------------------------------------------------------
+ATIVAR - 16/05/20 20:49:10:063 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+ATIVAR - 16/05/20 20:58:51:517 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+ - 20:58:55:533 RX <- [STX]06653[ETX]
+              UltimoPesoLido: 6,653 - Resposta: [STX]06653[ETX]
+ - 20:59:01:407 RX <- [STX]04882[ETX]
+              UltimoPesoLido: 4,882 - Resposta: [STX]04882[ETX]
+
+--------------------------------------------------------------------------------
+ATIVAR - 16/05/20 21:01:31:282 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+ATIVAR - 16/05/20 21:02:20:079 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+ - 21:02:30:470 RX <- [STX]07026[ETX]
+              UltimoPesoLido: 7,026 - Resposta: [STX]07026[ETX]
+ - 21:02:39:813 RX <- [STX]07026[ETX]
+              UltimoPesoLido: 7,026 - Resposta: [STX]07026[ETX]
+ - 21:02:45:048 RX <- [STX]01858[ETX]
+              UltimoPesoLido: 1,858 - Resposta: [STX]01858[ETX]
+
+--------------------------------------------------------------------------------
+ATIVAR - 17/05/20 08:01:03:001 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+ - 08:01:03:001 TX -> [ENQ]
+ - 08:01:03:220 RX <- [STX]06372[ETX]
+              UltimoPesoLido: 6,372 - Resposta: [STX]06372[ETX]
+
+--------------------------------------------------------------------------------
+ATIVAR - 17/05/20 08:05:52:737 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+ - 08:05:52:737 TX -> [ENQ]
+ - 08:05:53:112 RX <- [STX]01518[ETX]
+              UltimoPesoLido: 1,518 - Resposta: [STX]01518[ETX]
+ - 08:06:19:940 TX -> [ENQ]
+ - 08:06:20:159 RX <- [STX]01518[ETX]
+              UltimoPesoLido: 1,518 - Resposta: [STX]01518[ETX]
+ - 08:06:28:190 RX <- [STX]04260[ETX]
+              UltimoPesoLido: 4,26 - Resposta: [STX]04260[ETX]
+
+--------------------------------------------------------------------------------
+ATIVAR - 31/05/20 17:02:19:111 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+ - 17:02:19:111 TX -> [ENQ]
+              UltimoPesoLido: -9 - Resposta: 
+ - 17:02:29:814 TX -> [ENQ]
+              UltimoPesoLido: -9 - Resposta: 
+
+--------------------------------------------------------------------------------
+ATIVAR - 31/05/20 17:04:18:845 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+ - 17:04:18:845 TX -> [ENQ]
+
+--------------------------------------------------------------------------------
+ATIVAR - 31/05/20 17:21:16:647 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+ - 17:21:16:647 TX -> [ENQ]
