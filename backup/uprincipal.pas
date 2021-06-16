@@ -73,7 +73,7 @@ var
 
 implementation
 uses typinfo,
-ACBrUtil, ACBrDeviceSerial; {instalar o ACBr }
+ACBrUtil, ACBrDeviceSerial; {Para instalar o ACBr usando o Script do Ari, visite meu canal... www.youtube.com/infocotidiano}
 
 
 {$R *.lfm}
@@ -141,7 +141,7 @@ begin
        if qrProduto.Active then
           qrProduto.Close;
        qrProduto.sql.Clear;
-       qrProduto.sql.add('select * from vw_venda');
+       qrProduto.sql.add('select * from produto');
        qrProduto.sql.add('where barras in(:cBARRAS) or CODIGO in(:nCODIGO)');
        qrProduto.ParamByName('cBARRAS').AsString:=trim(cCODIGO.Text);
        qrProduto.ParamByName('nCODIGO').AsInteger := StrToIntDef(cCODIGO.Text,0);
@@ -246,7 +246,7 @@ begin
           qrProduto.Close;
 
         qrProduto.sql.Clear;
-        qrProduto.sql.add('select * from vw_venda');
+        qrProduto.sql.add('select * from produto');
         qrProduto.sql.add('where descricao like :cDESCRICAO');
         qrProduto.ParamByName('cDESCRICAO').AsString:='%'+trim(cNOME)+'%' ;
         qrProduto.Open;

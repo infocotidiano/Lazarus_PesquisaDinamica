@@ -20,8 +20,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="69"/>
-        <CursorPos X="110" Y="76"/>
+        <TopLine Value="214"/>
+        <CursorPos X="91" Y="232"/>
         <UsageCount Value="34"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -34,7 +34,7 @@
         <UsageCount Value="10"/>
       </Unit2>
     </Units>
-    <JumpHistory Count="27" HistoryIndex="26">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="uprincipal.pas"/>
         <Caret Line="75" Column="6" TopLine="67"/>
@@ -143,6 +143,13 @@
         <Filename Value="uprincipal.pas"/>
         <Caret Line="146" Column="35" TopLine="136"/>
       </Position27>
+      <Position28>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="139" Column="61" TopLine="117"/>
+      </Position28>
+      <Position29>
+        <Filename Value="uprincipal.pas"/>
+      </Position29>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

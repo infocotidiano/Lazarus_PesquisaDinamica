@@ -10,7 +10,6 @@ object frmPrincipal: TfrmPrincipal
   OnClose = FormClose
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.8.0'
   object pnpDescricao: TPanel
     Left = 0
     Height = 50
@@ -73,8 +72,6 @@ object frmPrincipal: TfrmPrincipal
     DisplayFormat = '###,##0.###'
     Font.Color = clWhite
     Font.Height = -24
-    MaxValue = 0
-    MinValue = 0
     ParentColor = True
     ParentFont = False
     TabOrder = 2
@@ -90,8 +87,6 @@ object frmPrincipal: TfrmPrincipal
     DisplayFormat = '###,##0.00'
     Font.Color = clWhite
     Font.Height = -24
-    MaxValue = 0
-    MinValue = 0
     ParentColor = True
     ParentFont = False
     TabOrder = 3
@@ -118,8 +113,6 @@ object frmPrincipal: TfrmPrincipal
     DisplayFormat = '###,##0.00'
     Font.Color = clWhite
     Font.Height = -24
-    MaxValue = 0
-    MinValue = 0
     ParentColor = True
     ParentFont = False
     TabOrder = 4
@@ -146,8 +139,6 @@ object frmPrincipal: TfrmPrincipal
     DisplayFormat = '###,##0.00'
     Font.Color = clYellow
     Font.Height = -24
-    MaxValue = 0
-    MinValue = 0
     ParentColor = True
     ParentFont = False
     TabOrder = 5
@@ -572,8 +563,8 @@ object frmPrincipal: TfrmPrincipal
         Precision = 15
       end>
     PacketRecords = 0
-    left = 86
-    top = 394
+    Left = 86
+    Top = 394
     object mdItemITEM: TAutoIncField
       FieldKind = fkData
       FieldName = 'ITEM'
@@ -611,8 +602,6 @@ object frmPrincipal: TfrmPrincipal
       ReadOnly = False
       Required = False
       DisplayFormat = '###,##0.0##'
-      MaxValue = 0
-      MinValue = 0
       Precision = 3
     end
     object mdItemUNITARIO: TCurrencyField
@@ -624,8 +613,6 @@ object frmPrincipal: TfrmPrincipal
       ReadOnly = False
       Required = False
       DisplayFormat = '###,##0.00'
-      MaxValue = 0
-      MinValue = 0
     end
     object mdItemTOTAL: TCurrencyField
       FieldKind = fkData
@@ -636,48 +623,45 @@ object frmPrincipal: TfrmPrincipal
       ReadOnly = False
       Required = False
       DisplayFormat = '###,##0.00'
-      MaxValue = 0
-      MinValue = 0
     end
   end
   object dsItem: TDataSource
     DataSet = mdItem
-    left = 146
-    top = 385
+    Left = 146
+    Top = 385
   end
   object RxDBGridFooterTools1: TRxDBGridFooterTools
     Caption = 'Totals row'
     FooterColor = clBlack
-    left = 328
-    top = 456
+    Left = 328
+    Top = 456
   end
   object conexao: TZConnection
     ControlsCodePage = cCP_UTF8
     AutoEncodeStrings = True
-    Catalog = 'pdv'
     Properties.Strings = (
       'AutoEncodeStrings=ON'
+      'controls_cp=CP_UTF8'
     )
     AutoCommit = False
     Connected = True
     HostName = 'localhost'
-    Port = 3306
-    Database = 'pdv'
+    Port = 0
+    Database = 'C:\Projetos\Lazarus_PesquisaDinamica\banco.db3'
     User = 'root'
-    Password = 'Info@3004'
-    Protocol = 'mysql'
-    LibraryLocation = 'C:\Projetos\Ex_Pesq_dinamica\libmysql.dll'
-    left = 224
-    top = 432
+    Protocol = 'sqlite-3'
+    LibraryLocation = 'C:\Projetos\Lazarus_PesquisaDinamica\sqlite3.dll'
+    Left = 224
+    Top = 432
   end
   object qrProduto: TZQuery
     Connection = conexao
     SQL.Strings = (
-      'select * from vw_venda'
+      'select * from produto'
     )
     Params = <>
-    left = 112
-    top = 448
+    Left = 112
+    Top = 448
     object qrProdutoCODIGO: TLongintField
       FieldKind = fkData
       FieldName = 'CODIGO'
@@ -716,8 +700,6 @@ object frmPrincipal: TfrmPrincipal
       ReadOnly = False
       Required = False
       DisplayFormat = '###,##0.00'
-      MaxValue = 0
-      MinValue = 0
       Precision = 9
     end
     object qrProdutoPESAVEL: TStringField
@@ -733,12 +715,12 @@ object frmPrincipal: TfrmPrincipal
   end
   object dsProduto: TDataSource
     DataSet = qrProduto
-    left = 174
-    top = 450
+    Left = 174
+    Top = 450
   end
   object ActionList1: TActionList
-    left = 336
-    top = 64
+    Left = 336
+    Top = 64
     object actLePeso: TAction
       Caption = 'Le Peso'
       OnExecute = actLePesoExecute
@@ -751,7 +733,7 @@ object frmPrincipal: TfrmPrincipal
     MonitorarBalanca = True
     ArqLOG = 'teste.txt'
     OnLePeso = ACBrBAL1LePeso
-    left = 12
-    top = 159
+    Left = 12
+    Top = 159
   end
 end
