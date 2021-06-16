@@ -20,4 +20,4 @@ Componente para conexão com o banco de dados. ZEOSLib<br>
 
 
 ### Link para o meu video: (https://youtu.be/pGf3Jvu0yUE)
->>>>>>> a43c9251106100ef1273c3cc2d5612989e269210
+
