@@ -5,4 +5,6 @@ Infocotidiano
 Exemplo original utilizado view de um banco
 mysql/mariadb
 Banco SQLite - banco.db3
+tratado erro da balança
+adicionando item na tabela temporaria
 

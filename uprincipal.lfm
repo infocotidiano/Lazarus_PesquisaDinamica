@@ -46,7 +46,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 155
     Caption = 'Informe o Produto'
     Font.CharSet = ANSI_CHARSET
-    Font.Color = clBlack
+    Font.Color = clWhite
     Font.Height = -19
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
@@ -80,6 +80,7 @@ object frmPrincipal: TfrmPrincipal
     ParentFont = False
     TabOrder = 2
     Value = 2.3221
+    OnKeyDown = nQTDEKeyDown
   end
   object nUNIT: TCurrencyEdit
     Left = 56
@@ -347,8 +348,9 @@ object frmPrincipal: TfrmPrincipal
       Font.Style = [fsBold]
       HeaderHotZones = []
       HeaderPushZones = []
-      Options = [dgEditing, dgTitles, dgColumnResize, dgColumnMove, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      Options = [dgEditing, dgTitles, dgColumnResize, dgColumnMove, dgConfirmDelete, dgCancelOnExit]
       ParentFont = False
+      ReadOnly = True
       Scrollbars = ssNone
       TabOrder = 0
       TitleFont.Color = clWhite
@@ -370,7 +372,7 @@ object frmPrincipal: TfrmPrincipal
   object pnpPESQUISA: TPanel
     Left = 56
     Height = 231
-    Top = 161
+    Top = 500
     Width = 770
     ClientHeight = 231
     ClientWidth = 770

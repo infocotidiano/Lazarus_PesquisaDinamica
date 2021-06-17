@@ -60,8 +60,10 @@ TfrmPrincipal = class(TForm)
   procedure FormShow(Sender: TObject);
   procedure gridPESQUISAKeyDown(Sender: TObject; var Key: Word;
     Shift: TShiftState);
+  procedure nQTDEKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 private
   procedure LimpaEdt;
+  procedure IncluiItem;
   function pesquisa(cNOME:string):Boolean;
 
 public
@@ -107,6 +109,24 @@ begin
 
 end;
 
+procedure TfrmPrincipal.nQTDEKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if key = VK_RETURN then
+     begin
+       if nQTDE.Value > 0 then
+          begin
+           IncluiItem;
+          end
+       else
+          begin
+             ShowMessage('A quantidade vendida invalida');
+          end;
+       cCODIGO.SetFocus;
+     end;
+
+end;
+
 procedure TfrmPrincipal.FormClose(Sender: TObject; var CloseAction: TCloseAction
   );
 begin
@@ -122,16 +142,6 @@ var
 begin
   if key = VK_RETURN then
      begin
-       {
-       Estrutura do Banco de dados para exemplo:
-
-       CODIGO INT,
-       DESCRICAO VARCHAR(35),
-       BARRAS VARCHAR(13),
-       VENDA DECIMAL(7,2),
-       PESAVEL VARCHAR(1);
-
-       }
        if pnpPESQUISA.Visible then
           begin
             cCODIGO.Text:=inttostr(qrProdutoCODIGO.Value);
@@ -154,13 +164,23 @@ begin
                nQTDE.Value:=1
             else
                begin
+                 try
                  actLePeso.execute;
+                 except
+                   on e: Exception do
+                     ShowMessage('Erro ao ler o peso da balança'+sLineBreak
+                     'Verifique os cabos e se a balança esta ligada'+sLineBreak+
+                     e.ClassName+sLineBreak+e.Message
+                     );
+                 end;
                end;
             nUNIT.Value:=qrProdutoVENDA.Value;
+            nQTDE.SetFocus;
           end
        else
           begin
               ShowMessage('produto não encontrado !');
+              cCODIGO.SetFocus;
           end;
      end;
 
@@ -232,6 +252,23 @@ begin
   nUNIT.Clear;
   nSubTot.Clear;
   nTotalPed.Clear;
+end;
+
+procedure TfrmPrincipal.IncluiItem;
+begin
+  try
+  mdItem.Insert;
+  mdItemCODIGO.Value   :=StrToInt(trim(cCODIGO.Text));
+  mdItemDESCRICAO.Value:=pnpDescricao.Caption;
+  mdItemQTDE.Value     :=nQTDE.Value;
+  mdItemUNITARIO.Value :=nUNIT.Value;
+  mdItemTOTAL.Value    := RoundABNT(nQTDE.Value * nUNIT.Value,2);
+  mdItem.Post;
+  except
+    on e: exception do
+       ShowMessage('Erro ao incluir na tabela de item'+
+       sLineBreak+e.ClassName+sLineBreak+e.Message);
+  end;
 end;
 
 function TfrmPrincipal.pesquisa(cNOME: string): Boolean;

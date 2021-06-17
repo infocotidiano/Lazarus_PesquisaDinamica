@@ -1,0 +1,20 @@
+
+--------------------------------------------------------------------------------
+ATIVAR - 17/06/21 07:35:44:354 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+ATIVAR - 17/06/21 07:36:34:976 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+ATIVAR - 17/06/21 07:36:47:329 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+ATIVAR - 17/06/21 07:39:15:939 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+

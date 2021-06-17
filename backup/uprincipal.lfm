@@ -10,7 +10,6 @@ object frmPrincipal: TfrmPrincipal
   OnClose = FormClose
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.12.0'
   object pnpDescricao: TPanel
     Left = 0
     Height = 50
@@ -46,8 +45,12 @@ object frmPrincipal: TfrmPrincipal
     Top = 80
     Width = 155
     Caption = 'Informe o Produto'
-    Font.Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
     Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
     ParentColor = False
     ParentFont = False
   end
@@ -77,6 +80,7 @@ object frmPrincipal: TfrmPrincipal
     ParentFont = False
     TabOrder = 2
     Value = 2.3221
+    OnKeyDown = nQTDEKeyDown
   end
   object nUNIT: TCurrencyEdit
     Left = 56
@@ -344,8 +348,9 @@ object frmPrincipal: TfrmPrincipal
       Font.Style = [fsBold]
       HeaderHotZones = []
       HeaderPushZones = []
-      Options = [dgEditing, dgTitles, dgColumnResize, dgColumnMove, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      Options = [dgEditing, dgTitles, dgColumnResize, dgColumnMove, dgConfirmDelete, dgCancelOnExit]
       ParentFont = False
+      ReadOnly = True
       Scrollbars = ssNone
       TabOrder = 0
       TitleFont.Color = clWhite
@@ -367,7 +372,7 @@ object frmPrincipal: TfrmPrincipal
   object pnpPESQUISA: TPanel
     Left = 56
     Height = 231
-    Top = 161
+    Top = 500
     Width = 770
     ClientHeight = 231
     ClientWidth = 770
@@ -525,7 +530,7 @@ object frmPrincipal: TfrmPrincipal
   object Memo1: TMemo
     Left = 32
     Height = 50
-    Top = 432
+    Top = 440
     Width = 328
     TabOrder = 8
   end
