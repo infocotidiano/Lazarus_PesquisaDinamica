@@ -197,7 +197,7 @@ begin
    try
    ACBrBAL1.LePeso( TimeOut );
    except
-     showmessage('Erro ao ler o peso da balanca');
+     showmessage('Erro ao ler o peso da balança!');
      nQTDE.Value:=0;
    end;
 end;

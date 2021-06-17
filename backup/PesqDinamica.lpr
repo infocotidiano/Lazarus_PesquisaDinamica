@@ -8,7 +8,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, uprincipal, rxnew, zcomponent;
+  Forms, uprincipal, rxnew, zcomponent
+  { you can add units after this };
 
 {$R *.res}
 
