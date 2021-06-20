@@ -18,3 +18,31 @@ ATIVAR - 17/06/21 07:36:47:329 - Modelo: Filizola - Porta: COM3         Device: 
 ATIVAR - 17/06/21 07:39:15:939 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
 --------------------------------------------------------------------------------
 
+
+--------------------------------------------------------------------------------
+ATIVAR - 20/06/21 08:46:09:797 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+ATIVAR - 20/06/21 08:47:38:655 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+ATIVAR - 20/06/21 08:52:17:824 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+ - 08:52:17:824 TX -> [ENQ]
+              UltimoPesoLido: -9 - Resposta: 
+ - 08:52:27:871 RX <- [STX]06505[ETX]
+              UltimoPesoLido: 6,505 - Resposta: [STX]06505[ETX]
+
+--------------------------------------------------------------------------------
+ATIVAR - 20/06/21 08:56:29:728 - Modelo: Filizola - Porta: COM3         Device: BAUD=9600 DATA=8 PARITY=N STOP=1 HANDSHAKE= MAXBANDWIDTH=0 SENDBYTESCOUNT=0 SENDBYTESINTERVAL=0
+--------------------------------------------------------------------------------
+
+ - 08:56:29:728 TX -> [ENQ]
+              UltimoPesoLido: -9 - Resposta: 
+ - 08:56:48:761 RX <- [STX]09327[ETX]
+              UltimoPesoLido: 9,327 - Resposta: [STX]09327[ETX]

@@ -1,13 +1,14 @@
 object frmPrincipal: TfrmPrincipal
   Left = 257
-  Height = 517
+  Height = 544
   Top = 123
   Width = 948
   Caption = 'EXEMPLO PESQUISA DINAMICA PDV'
-  ClientHeight = 517
+  ClientHeight = 544
   ClientWidth = 948
   Color = 3487029
   OnClose = FormClose
+  OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
   object pnpDescricao: TPanel
@@ -372,7 +373,7 @@ object frmPrincipal: TfrmPrincipal
   object pnpPESQUISA: TPanel
     Left = 56
     Height = 231
-    Top = 500
+    Top = 160
     Width = 770
     ClientHeight = 231
     ClientWidth = 770

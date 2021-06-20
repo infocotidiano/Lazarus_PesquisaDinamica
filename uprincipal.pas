@@ -57,6 +57,7 @@ TfrmPrincipal = class(TForm)
   procedure cCODIGOKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   procedure cCODIGOKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
   procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+  procedure FormCreate(Sender: TObject);
   procedure FormShow(Sender: TObject);
   procedure gridPESQUISAKeyDown(Sender: TObject; var Key: Word;
     Shift: TShiftState);
@@ -65,7 +66,6 @@ private
   procedure LimpaEdt;
   procedure IncluiItem;
   function pesquisa(cNOME:string):Boolean;
-
 public
 
 end;
@@ -135,6 +135,12 @@ begin
 
 end;
 
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+begin
+    LimpaEdt;
+    nQTDE.Value:=0;
+end;
+
 procedure TfrmPrincipal.cCODIGOKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 var
@@ -168,10 +174,15 @@ begin
                  actLePeso.execute;
                  except
                    on e: Exception do
+                     begin
                      ShowMessage('Erro ao ler o peso da balança'+sLineBreak +
                      'Verifique os cabos e se a balança esta ligada'+sLineBreak+
                      e.ClassName+sLineBreak+e.Message
                      );
+
+                   nQTDE.Value:=0;
+                   nQTDE.SetFocus;
+                   end;
                  end;
                end;
             nUNIT.Value:=qrProdutoVENDA.Value;
@@ -251,7 +262,7 @@ begin
   nQTDE.Clear;
   nUNIT.Clear;
   nSubTot.Clear;
-  nTotalPed.Clear;
+ // nTotalPed.Clear;
 end;
 
 procedure TfrmPrincipal.IncluiItem;
@@ -264,6 +275,8 @@ begin
   mdItemUNITARIO.Value :=nUNIT.Value;
   mdItemTOTAL.Value    := RoundABNT(nQTDE.Value * nUNIT.Value,2);
   mdItem.Post;
+  nTotalPed.Value:=nTotalPed.Value+RoundABNT(nQTDE.Value * nUNIT.Value,2);
+  LimpaEdt;
   except
     on e: exception do
        ShowMessage('Erro ao incluir na tabela de item'+
