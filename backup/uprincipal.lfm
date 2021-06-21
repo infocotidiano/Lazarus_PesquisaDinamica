@@ -148,7 +148,6 @@ object frmPrincipal: TfrmPrincipal
     ParentColor = True
     ParentFont = False
     TabOrder = 5
-    Value = 2.3221
   end
   object Label5: TLabel
     Left = 211
@@ -373,7 +372,7 @@ object frmPrincipal: TfrmPrincipal
   object pnpPESQUISA: TPanel
     Left = 56
     Height = 231
-    Top = 500
+    Top = 160
     Width = 770
     ClientHeight = 231
     ClientWidth = 770

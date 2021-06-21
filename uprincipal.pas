@@ -66,6 +66,7 @@ private
   procedure LimpaEdt;
   procedure IncluiItem;
   function pesquisa(cNOME:string):Boolean;
+  function PesqProd(cTexto:string):boolean;
 public
 
 end;
@@ -120,7 +121,7 @@ begin
           end
        else
           begin
-             ShowMessage('A quantidade vendida invalida');
+             ShowMessage('L124 - A quantidade vendida invalida');
           end;
        cCODIGO.SetFocus;
      end;
@@ -145,6 +146,7 @@ procedure TfrmPrincipal.cCODIGOKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 var
   nCODIGO : integer;
+  nPeso   : real;
 begin
   if key = VK_RETURN then
      begin
@@ -154,15 +156,8 @@ begin
             qrProduto.Close;
             pnpPESQUISA.Visible:=false;
           end;
-       if qrProduto.Active then
-          qrProduto.Close;
-       qrProduto.sql.Clear;
-       qrProduto.sql.add('select * from produto');
-       qrProduto.sql.add('where barras in(:cBARRAS) or CODIGO in(:nCODIGO)');
-       qrProduto.ParamByName('cBARRAS').AsString:=trim(cCODIGO.Text);
-       qrProduto.ParamByName('nCODIGO').AsInteger := StrToIntDef(cCODIGO.Text,0);
-       qrProduto.Open;
-       if qrProduto.RecordCount > 0 then
+
+       if PesqProd(cCODIGO.Text) then
           begin
             qrProduto.First;
             pnpDescricao.Caption:=qrProdutoDESCRICAO.Value;
@@ -175,7 +170,7 @@ begin
                  except
                    on e: Exception do
                      begin
-                     ShowMessage('Erro ao ler o peso da balança'+sLineBreak +
+                     ShowMessage('L173 - Erro ao ler o peso da balança'+sLineBreak +
                      'Verifique os cabos e se a balança esta ligada'+sLineBreak+
                      e.ClassName+sLineBreak+e.Message
                      );
@@ -190,7 +185,7 @@ begin
           end
        else
           begin
-              ShowMessage('produto não encontrado !');
+              ShowMessage('L188 - produto não encontrado !');
               cCODIGO.SetFocus;
           end;
      end;
@@ -228,7 +223,7 @@ begin
    try
    ACBrBAL1.LePeso( TimeOut );
    except
-     showmessage('Erro ao ler o peso da balança!');
+     showmessage('L226 - Erro ao ler o peso da balança!');
      nQTDE.Value:=0;
    end;
 end;
@@ -279,10 +274,12 @@ begin
   LimpaEdt;
   except
     on e: exception do
-       ShowMessage('Erro ao incluir na tabela de item'+
+       ShowMessage('L277 - Erro ao incluir na tabela de item'+
        sLineBreak+e.ClassName+sLineBreak+e.Message);
   end;
 end;
+
+
 
 function TfrmPrincipal.pesquisa(cNOME: string): Boolean;
 begin
@@ -313,6 +310,25 @@ begin
            end;
 
      end;
+end;
+
+function TfrmPrincipal.PesqProd(cTexto: string): boolean;
+begin
+  if qrProduto.Active then
+     qrProduto.Close;
+  qrProduto.sql.Clear;
+  qrProduto.sql.add('select * from produto');
+  qrProduto.sql.add('where barras in(:cBARRAS) or CODIGO in(:nCODIGO)');
+  qrProduto.ParamByName('cBARRAS').AsString:=trim(cCODIGO.Text);
+  qrProduto.ParamByName('nCODIGO').AsInteger := StrToIntDef(cCODIGO.Text,0);
+  qrProduto.Open;
+  if qrProduto.RecordCount > 0 then
+     begin
+       pnpDescricao.Caption:=qrProdutoDESCRICAO.Value;
+       result := true
+     end
+  else
+     result := false;
 end;
 
 

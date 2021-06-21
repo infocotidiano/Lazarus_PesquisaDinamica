@@ -148,7 +148,6 @@ object frmPrincipal: TfrmPrincipal
     ParentColor = True
     ParentFont = False
     TabOrder = 5
-    Value = 2.3221
   end
   object Label5: TLabel
     Left = 211
