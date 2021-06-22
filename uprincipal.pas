@@ -67,6 +67,7 @@ private
   procedure IncluiItem;
   function pesquisa(cNOME:string):Boolean;
   function PesqProd(cTexto:string):boolean;
+  function EtiquetaBal:boolean;
 public
 
 end;
@@ -156,6 +157,9 @@ begin
             qrProduto.Close;
             pnpPESQUISA.Visible:=false;
           end;
+       if EtiquetaBal then
+          abort;
+
 
        if PesqProd(cCODIGO.Text) then
           begin
@@ -325,10 +329,52 @@ begin
   if qrProduto.RecordCount > 0 then
      begin
        pnpDescricao.Caption:=qrProdutoDESCRICAO.Value;
+       cCODIGO.Text:=inttostr(qrProdutoCODIGO.Value);
        result := true
      end
   else
      result := false;
+end;
+
+function TfrmPrincipal.EtiquetaBal: boolean;
+var
+  nPESO, nVALOR : real;
+begin
+  nPESO:=0;
+  nVALOR:=0;
+  if Length(trim(cCODIGO.Text)) = 13 then
+     begin
+       if Copy(cCODIGO.Text, 1,1) = '2' then
+          begin
+            // Etq Peso
+            nPESO:=StrToFloat(copy(cCODIGO.Text,8,5))/1000;
+            cCODIGO.Text:=copy(cCODIGO.Text,2,6);
+          end
+       else if Copy(cCODIGO.Text,1,2) = '31' then
+          begin
+            // etq valor
+            nVALOR:=StrToFloat(copy(cCODIGO.Text,8,5))/100;
+            cCODIGO.Text:=copy(cCODIGO.Text,3,5);
+          end ;
+       if (nVALOR <> 0) or (nPESO <> 0) then // se o peso ou valor for diferente de zero.. entao é nao trata etq como balanca
+           begin
+             if PesqProd(cCODIGO.Text) then
+                begin
+                  if nVALOR > 0  then
+                     nPESO:=nVALOR/qrProdutoVENDA.Value;
+                  nQTDE.Value:=nPESO;
+                  nUNIT.Value:=qrProdutoVENDA.Value;
+                  nSubTot.Value:=nPESO * qrProdutoVENDA.Value;
+                  IncluiItem;
+                  Result := true;
+                end;
+           end
+       else
+          Result := false;
+     end
+  else
+     Result := false;
+
 end;
 
 

@@ -217,6 +217,7 @@ object frmPrincipal: TfrmPrincipal
           Title.Caption = 'QTDE'
           Width = 50
           FieldName = 'QTDE'
+          DisplayFormat = '###,##0.000'
           EditButtons = <>
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
@@ -607,7 +608,7 @@ object frmPrincipal: TfrmPrincipal
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      DisplayFormat = '###,##0.0##'
+      DisplayFormat = '###,##0.000'
       Precision = 3
     end
     object mdItemUNITARIO: TCurrencyField

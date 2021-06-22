@@ -25,10 +25,13 @@ Link do Video 03 Enxugando Códigos: https://youtu.be/e6Hf5rZoMeQ
 
 Link do Video 04 Como integrar balança no seu PDV: https://youtu.be/DNyZXnKlJxs
 
+Link do Video 05 Ler etiquetas de balanças https://youtu.be/rflWAwWfZ3c
+
 
 
 Exemplo original utilizado view de um banco mysql/mariadb, substituido por
 Banco SQLite - banco.db3 anexo neste projeto
 tratado erro da balança
 adicionando item na tabela temporaria
+configurado função para ler etiquetas de balanças
 
