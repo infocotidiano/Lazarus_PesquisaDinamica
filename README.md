@@ -1,6 +1,6 @@
 # Pesquisa Dinâmica e Dicas para PDV
 
-## Este repositório contém o código-fonte do canal Infocotidiano com exemplos práticos para Ponto de Venda (PDV): pesquisa dinâmica de produtos, integração com balanças (ACBrBAL), leitura de etiquetas de balança e dicas de otimização de código.  
+## Este repositório contém o código-fonte do canal Infocotidiano com exemplos práticos para Ponto de Venda (PDV): pesquisa dinâmica de produtos, integração com balanças (ACBrBAL), leitura de etiquetas de balança.  
 
 <a href="https://www.youtube.com/watch?v=pGf3Jvu0yUE"><img src="https://img.youtube.com/vi/pGf3Jvu0yUE/maxresdefault.jpg" alt="Vídeo 01 — Pesquisa Dinâmica" width="50%"></a>
 
