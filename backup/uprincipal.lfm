@@ -7,10 +7,11 @@ object frmPrincipal: TfrmPrincipal
   ClientHeight = 544
   ClientWidth = 948
   Color = 3487029
+  Position = poDesktopCenter
+  LCLVersion = '4.4.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  Position = poDesktopCenter
   object pnpDescricao: TPanel
     Left = 0
     Height = 50
@@ -22,6 +23,7 @@ object frmPrincipal: TfrmPrincipal
     Color = clBlack
     Font.Color = clWhite
     Font.Height = -27
+    ParentBackground = False
     ParentColor = False
     ParentFont = False
     TabOrder = 0
@@ -34,11 +36,11 @@ object frmPrincipal: TfrmPrincipal
     Color = 5000268
     Font.Color = clWhite
     Font.Height = -27
-    OnKeyDown = cCODIGOKeyDown
-    OnKeyUp = cCODIGOKeyUp
     ParentFont = False
     TabOrder = 1
     Text = '0123456'
+    OnKeyDown = cCODIGOKeyDown
+    OnKeyUp = cCODIGOKeyUp
   end
   object Label1: TLabel
     Left = 56
@@ -170,6 +172,7 @@ object frmPrincipal: TfrmPrincipal
     ClientHeight = 381
     ClientWidth = 538
     Color = clWhite
+    ParentBackground = False
     ParentColor = False
     TabOrder = 6
     object RxDBGrid1: TRxDBGrid
@@ -378,6 +381,7 @@ object frmPrincipal: TfrmPrincipal
     ClientHeight = 231
     ClientWidth = 770
     Color = clGray
+    ParentBackground = False
     ParentColor = False
     TabOrder = 7
     Visible = False
@@ -514,9 +518,7 @@ object frmPrincipal: TfrmPrincipal
       Align = alClient
       Color = clSilver
       DrawFullLine = False
-      FocusColor = clRed
       SelectedColor = clHighlight
-      GridLineStyle = psSolid
       DataSource = dsProduto
       FixedCols = 0
       Font.Height = -16
@@ -570,8 +572,8 @@ object frmPrincipal: TfrmPrincipal
         Precision = 15
       end>
     PacketRecords = 0
-    Left = 86
-    Top = 394
+    Left = 760
+    Top = 488
     object mdItemITEM: TAutoIncField
       FieldKind = fkData
       FieldName = 'ITEM'
@@ -634,32 +636,31 @@ object frmPrincipal: TfrmPrincipal
   end
   object dsItem: TDataSource
     DataSet = mdItem
-    Left = 146
-    Top = 385
+    Left = 856
+    Top = 240
   end
   object RxDBGridFooterTools1: TRxDBGridFooterTools
     Caption = 'Totals row'
     FooterColor = clBlack
-    Left = 328
-    Top = 456
+    Left = 800
+    Top = 496
   end
   object conexao: TZConnection
     ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = True
     Properties.Strings = (
       'AutoEncodeStrings=ON'
       'controls_cp=CP_UTF8'
+      'RawStringEncoding=DB_CP'
     )
     AutoCommit = False
-    Connected = True
+    BeforeConnect = conexaoBeforeConnect
+    DisableSavepoints = False
     HostName = 'localhost'
     Port = 0
-    Database = 'C:\Projetos\Lazarus_PesquisaDinamica\banco.db3'
     User = 'root'
-    Protocol = 'sqlite-3'
-    LibraryLocation = 'C:\Projetos\Lazarus_PesquisaDinamica\sqlite3.dll'
-    Left = 248
-    Top = 424
+    Protocol = 'sqlite'
+    Left = 856
+    Top = 176
   end
   object qrProduto: TZQuery
     Connection = conexao
@@ -667,8 +668,8 @@ object frmPrincipal: TfrmPrincipal
       'select * from produto'
     )
     Params = <>
-    Left = 112
-    Top = 448
+    Left = 768
+    Top = 394
     object qrProdutoCODIGO: TLongintField
       FieldKind = fkData
       FieldName = 'CODIGO'
@@ -722,8 +723,8 @@ object frmPrincipal: TfrmPrincipal
   end
   object dsProduto: TDataSource
     DataSet = qrProduto
-    Left = 174
-    Top = 450
+    Left = 816
+    Top = 394
   end
   object ActionList1: TActionList
     Left = 336
@@ -740,7 +741,7 @@ object frmPrincipal: TfrmPrincipal
     MonitorarBalanca = True
     ArqLOG = 'teste.txt'
     OnLePeso = ACBrBAL1LePeso
-    Left = 12
-    Top = 159
+    Left = 856
+    Top = 304
   end
 end

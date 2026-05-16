@@ -1,37 +1,41 @@
-#Pesquisa dinamica para ser utilizada em PDVs
+# Pesquisa Dinâmica e Dicas para PDV
 
-##Compativel Delphi ou Lazarus - Free Pascal
+## Este repositório contém o código-fonte do canal Infocotidiano com exemplos práticos para Ponto de Venda (PDV): pesquisa dinâmica de produtos, integração com balanças (ACBrBAL), leitura de etiquetas de balança e dicas de otimização de código.  
 
-Codigo fonte do vídeo do youtube do Canal Infocotidiano
+<a href="https://www.youtube.com/watch?v=pGf3Jvu0yUE"><img src="https://img.youtube.com/vi/pGf3Jvu0yUE/maxresdefault.jpg" alt="Vídeo 01 — Pesquisa Dinâmica" width="50%"></a>
 
-Para emular balança e usar acbrbal, os arquivos estão na pasta EmuladorBalanca
+## Resumo rápido
+- **Plataformas:** Lazarus / Free Pascal (muita compatibilidade com Delphi)
+- **Funcionalidades:** pesquisa dinâmica, leitura de peso, leitura de etiquetas de balança, otimizações para PDV
+- **Banco de dados:** exemplo convertido para **SQLite** — arquivo `banco.db3` incluído
+## Requisitos
+- `Lazarus` / Free Pascal instalado
+- Componentes:
+	- **ACBr** — guias de instalação:
+		- ACBr Lazarus (Linux): https://www.youtube.com/watch?v=DjdmedZgMTE
+		- ACBr Lazarus (Windows): https://www.youtube.com/watch?v=o5oyqk-3kns
+	- **Rx** e **Zeos** — guia de instalação: https://www.youtube.com/watch?v=XTQbjq5Puu0
+- Emulador de balança (para testar sem hardware): configuração e uso: https://www.youtube.com/watch?v=PIfhubP1Sf8
 
-Componentes que precisam ser instalados acbr, rx e zeos
+## Guia rápido de uso
+1. Abra o projeto no Lazarus: `PesqDinamica.lpi`.
+2. Instale/compile os componentes listados (ACBr, Rx, Zeos) conforme os links acima.
+3. O banco SQLite está em `banco.db3` — use um cliente SQLite para inspeção ou edição.
+4. Teste a integração de balança com a pasta `EmuladorBalanca` se não tiver hardware disponível.
 
-Como instalar ACBr Lazarus LInux: https://www.youtube.com/watch?v=DjdmedZgMTE
+## Estrutura do repositório
+- `PesqDinamica.lpi`, `PesqDinamica.lpr` — arquivos do projeto
+- `uprincipal.pas`, `uprincipal.lfm` — unidade principal da aplicação
+- `banco.db3` — banco SQLite usado nos exemplos
+- `EmuladorBalanca/` — arquivos e configurações do emulador de balança
 
-Como instalar ACBr Lazarus Windows: https://www.youtube.com/watch?v=o5oyqk-3kns
+## Vídeos e recursos
+- Vídeo 01 — Pesquisa dinâmica: https://www.youtube.com/watch?v=pGf3Jvu0yUE
+- Vídeo 02 — Pesquisa dinâmica (consultas por código/código de barras/descrição): https://www.youtube.com/watch?v=_MyUCatSjWU
+- Vídeo 03 — Enxugando códigos: https://youtu.be/e6Hf5rZoMeQ
+- Vídeo 04 — Como integrar balança no PDV: https://youtu.be/DNyZXnKlJxs
+- Vídeo 05 — Ler etiquetas de balanças: https://youtu.be/rflWAwWfZ3c
 
-Como instalar Rx e Zeos: https://www.youtube.com/watch?v=XTQbjq5Puu0
-
-Como configurar emulador de balança: https://www.youtube.com/watch?v=PIfhubP1Sf8
-
-
-Link do Video 01 Pesquisa dinamica: https://www.youtube.com/watch?v=pGf3Jvu0yUE
-
-Link do Video 02 Pesquisa dinamica: https://www.youtube.com/watch?v=_MyUCatSjWU
-
-Link do Video 03 Enxugando Códigos: https://youtu.be/e6Hf5rZoMeQ
-
-Link do Video 04 Como integrar balança no seu PDV: https://youtu.be/DNyZXnKlJxs
-
-Link do Video 05 Ler etiquetas de balanças https://youtu.be/rflWAwWfZ3c
-
-
-
-Exemplo original utilizado view de um banco mysql/mariadb, substituido por
-Banco SQLite - banco.db3 anexo neste projeto
-tratado erro da balança
-adicionando item na tabela temporaria
-configurado função para ler etiquetas de balanças
-
+## Notas finais
+- Os exemplos foram adaptados para facilitar testes offline (SQLite) e demonstrar conceitos práticos para PDVs.
+- Posso adicionar miniaturas para os outros vídeos, detalhar instalação passo a passo ou criar um guia de deploy para Windows/Linux, se desejar.
