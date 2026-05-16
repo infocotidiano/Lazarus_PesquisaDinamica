@@ -32,7 +32,7 @@
 ## Vídeos e recursos
 - Vídeo 01 — Pesquisa dinâmica: https://www.youtube.com/watch?v=pGf3Jvu0yUE
 - Vídeo 02 — Pesquisa dinâmica (consultas por código/código de barras/descrição): https://www.youtube.com/watch?v=_MyUCatSjWU
-- Vídeo 03 — Enxugando códigos: https://youtu.be/e6Hf5rZoMeQ
+- Vídeo 03 — Ajustando códigos: https://youtu.be/e6Hf5rZoMeQ
 - Vídeo 04 — Como integrar balança no PDV: https://youtu.be/DNyZXnKlJxs
 - Vídeo 05 — Ler etiquetas de balanças: https://youtu.be/rflWAwWfZ3c
 
